@@ -1,11 +1,25 @@
 diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
-index 1321ad95923d..72b398672f93 100644
+index 1321ad95923d..8b413c2e91fe 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
 +++ b/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
-@@ -121,6 +121,35 @@ opp-1800000000 {
+@@ -110,16 +110,48 @@ opp-1512000000 {
+ 		opp-1608000000 {
+ 			opp-hz = /bits/ 64 <1608000000>;
+ 			opp-microvolt = <831000>;
++			turbo-mode;
+ 		};
+ 
+ 		opp-1704000000 {
+ 			opp-hz = /bits/ 64 <1704000000>;
+ 			opp-microvolt = <861000>;
++			turbo-mode;
+ 		};
+ 
+ 		opp-1800000000 {
  			opp-hz = /bits/ 64 <1800000000>;
  			opp-microvolt = <981000>;
- 		};
++			turbo-mode;
++		};
 +
 +// extra opp entries inspired by values from g12b-s922x and g12b-a311d dtsi
 +		opp-1908000000 {
@@ -34,18 +48,37 @@ index 1321ad95923d..72b398672f93 100644
 +			opp-microvolt = <1022000>;
 +			turbo-mode;
 +			status = "disabled";
-+		};
+ 		};
  	};
  };
- 
 diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-s922x.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12b-s922x.dtsi
-index 19cad93a6889..e6ccc16ead9c 100644
+index 19cad93a6889..e7023ce50791 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-g12b-s922x.dtsi
 +++ b/arch/arm64/boot/dts/amlogic/meson-g12b-s922x.dtsi
-@@ -97,5 +97,13 @@ opp-1908000000 {
+@@ -81,21 +81,33 @@ opp-1512000000 {
+ 		opp-1608000000 {
+ 			opp-hz = /bits/ 64 <1608000000>;
+ 			opp-microvolt = <861000>;
++			turbo-mode;
+ 		};
+ 
+ 		opp-1704000000 {
+ 			opp-hz = /bits/ 64 <1704000000>;
+ 			opp-microvolt = <891000>;
++			turbo-mode;
+ 		};
+ 
+ 		opp-1800000000 {
+ 			opp-hz = /bits/ 64 <1800000000>;
+ 			opp-microvolt = <981000>;
++			turbo-mode;
+ 		};
+ 
+ 		opp-1908000000 {
  			opp-hz = /bits/ 64 <1908000000>;
  			opp-microvolt = <1022000>;
- 		};
++			turbo-mode;
++		};
 +
 +// extra opp from: https://github.com/tobetter/linux/commit/c76cac8ac9e72670bd1bee76b7edf8920694b20c
 +		opp-2016000000 {
@@ -53,17 +86,37 @@ index 19cad93a6889..e6ccc16ead9c 100644
 +			opp-microvolt = <1022000>;
 +			turbo-mode;
 +			status = "disabled";
-+		};
+ 		};
  	};
  };
 diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1.dtsi b/arch/arm64/boot/dts/amlogic/meson-sm1.dtsi
-index e5db8ce94062..f4be0b48234e 100644
+index e5db8ce94062..db539118f72a 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-sm1.dtsi
 +++ b/arch/arm64/boot/dts/amlogic/meson-sm1.dtsi
-@@ -164,6 +164,28 @@ opp-1908000000 {
+@@ -148,21 +148,47 @@ opp-1500000000 {
+ 		opp-1608000000 {
+ 			opp-hz = /bits/ 64 <1608000000>;
+ 			opp-microvolt = <810000>;
++			turbo-mode;
+ 		};
+ 
+ 		opp-1704000000 {
+ 			opp-hz = /bits/ 64 <1704000000>;
+ 			opp-microvolt = <850000>;
++			turbo-mode;
+ 		};
+ 
+ 		opp-1800000000 {
+ 			opp-hz = /bits/ 64 <1800000000>;
+ 			opp-microvolt = <900000>;
++			turbo-mode;
+ 		};
+ 
+ 		opp-1908000000 {
  			opp-hz = /bits/ 64 <1908000000>;
  			opp-microvolt = <950000>;
- 		};
++			turbo-mode;
++		};
 +
 +// extra opps from: https://forum.odroid.com/viewtopic.php?f=202&t=38557&sid=98e00df339e1ec497b602cd769915483&start=50#p292362
 +		opp-2016000000 {
@@ -85,7 +138,6 @@ index e5db8ce94062..f4be0b48234e 100644
 +			opp-microvolt = <1022000>;
 +			turbo-mode;
 +			status = "disabled";
-+		};
+ 		};
  	};
  };
- 
