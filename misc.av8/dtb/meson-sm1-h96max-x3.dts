@@ -48,3 +48,8 @@
 		status = "disabled";
 	};
 };
+
+/* lower the max frequency for the sd card */
+&sd_emmc_b {
+	max-frequency = <25000000>;
+};

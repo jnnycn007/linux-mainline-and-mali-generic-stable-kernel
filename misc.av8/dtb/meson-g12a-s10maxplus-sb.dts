@@ -30,6 +30,11 @@
         phy-handle = <&internal_ephy>;
 };
 
+/* lower the max frequency for the sd card */
+&sd_emmc_b {
+	max-frequency = <25000000>;
+};
+
 /* disable access to emmc as one might brick the device by overwriting sensitive parts of it */
 &sd_emmc_c {
 	status = "disabled";
