@@ -65,7 +65,7 @@ cp -v arch/arm/boot/dts/samsung/exynos4412-odroidx2.dtb /boot/dtb-${kver}
 cp -v arch/arm/boot/dts/samsung/exynos4412-odroidx.dtb /boot/dtb-${kver}
 cp -v System.map /boot/System.map-${kver}
 cd /boot
-update-initramfs -c -k ${kver}
+#update-initramfs -c -k ${kver}
 #mkimage -A arm -O linux -T ramdisk -a 0x0 -e 0x0 -n initrd.img-${kver} -d initrd.img-${kver} uInitrd-${kver}
 tar cvzf /compile/source/linux-stable-exy/${kver}.tar.gz /boot/*-${kver} /lib/modules/${kver}
 cp -v /compile/doc/stable/config.exy /compile/doc/stable/config.exy.old

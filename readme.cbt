@@ -65,7 +65,7 @@ cp -v vmlinux.kpart /boot/vmlinux.kpart-${kver}
 rm -f zImage cmdline bootloader.bin kernel.itb vmlinux.kpart
 # end chromebook special
 cd /boot
-update-initramfs -c -k ${kver}
+#update-initramfs -c -k ${kver}
 #mkimage -A arm -O linux -T ramdisk -a 0x0 -e 0x0 -n initrd.img-${kver} -d initrd.img-${kver} uInitrd-${kver}
 tar cvzf /compile/source/linux-stable-cbt/${kver}.tar.gz /boot/*-${kver} /lib/modules/${kver}
 cp -v /compile/doc/stable/config.cbt /compile/doc/stable/config.cbt.old
